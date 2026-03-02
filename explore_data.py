@@ -28,7 +28,6 @@ for path in (Path(__file__).parent.parent / 'ord-data' / 'data').glob('**/*.pb.g
             message=rxn,
             including_default_value_fields=False,
             preserving_proto_field_name=True,
-#            indent=0,
             sort_keys=False,
             use_integers_for_enums=False,
             descriptor_pool=None,
@@ -38,7 +37,7 @@ for path in (Path(__file__).parent.parent / 'ord-data' / 'data').glob('**/*.pb.g
     ))
     count += len(dataset.reactions)
     provenances.append(tuple([str(samples[-1]['provenance'].get(c, '')) for c in 'is_mined doi patent'.split()]))
-    with open('reaction_samples.jsonlines', 'at') as fout:
+    with open('explore_data.jsonlines', 'at') as fout:
         fout.write(json.dumps(samples[-1]) + '\n')
 
     print(f".reactions[{i}] (1 out of {len(dataset.reactions)}) in {path} was converted JSON:")
