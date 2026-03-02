@@ -1,16 +1,10 @@
 # Open Reaction Database: Schema (ord-schema)
 
-[![DOI:10.1007/978-3-319-76207-4_15](https://zenodo.org/badge/DOI/10.1021/jacs.1c09820.svg)](https://doi.org/10.1021/jacs.1c09820)
-[![PyPI version](https://badge.fury.io/py/ord-schema.svg)](https://badge.fury.io/py/ord-schema)
-
-This repository contains the schema for the Open Reaction Database initiative; please see the documentation
-at https://docs.open-reaction-database.org.
-
-This repository does not contain the database itself; that is stored
-in [ord-data](https://github.com/open-reaction-database/ord-data). Rather, `ord-schema` is
-designed to store the database schema and tools for creating, validating, and submitting data to the database.
+This repository contains the schema and data exploration scripts for [Open Reaction Database](https://docs.open-reaction-database.org).
 
 ## Installation
+
+You **MUST** first install git-lfs and clone the [ord-data](https://github.com/open-reaction-database/ord-data) repo **BEFORE** installing the `ord-schema` package in this repo.
 
 1. install and initialize git-lfs
 2. clone ord-data and ord-schema
