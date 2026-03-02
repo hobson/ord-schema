@@ -13,6 +13,11 @@ designed to store the database schema and tools for creating, validating, and su
 ## Installation
 
 ```shell
+$ sudo apt install git-lfs
+$ git lfs install
+$ git clone https://github.com/open-reaction-database/ord-data
+$ git clone https://github.com/open-reaction-database/ord-schema
+$ cd ord-schema
 $ pip install ord-schema
 ```
 

@@ -17,7 +17,7 @@ provenances = [tuple('ismined doi patent'.split())]
 samples = []
 print('\t'.join(provenances[-1]))
 count = 0
-for path in Path('data').glob('**/*.pb.gz'):
+for path in (Path(__file__).parent.parent / 'ord-data' / 'data').glob('**/*.pb.gz'):
     print(path)
     dataset = load_message(str(path), dataset_pb2.Dataset)
     # write_message(dataset, str(path.with_suffix('.pbtxt')))
