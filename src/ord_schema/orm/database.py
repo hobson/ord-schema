@@ -13,6 +13,7 @@
 # limitations under the License.
 
 """Functions for creating/managing the PostgreSQL database."""
+import dotenv
 import os
 import time
 from unittest.mock import patch
@@ -27,13 +28,7 @@ from ord_schema.orm.mappers import Base, Mappers, from_proto
 from ord_schema.proto import dataset_pb2
 
 logger = get_logger(__name__)
-
-
-def get_connection_string(
-    database: str, username: str, password: str, host: str = "localhost", port: int = 5432
-) -> str:
-    """Creates an SQLAlchemy connection string."""
-    return f"postgresql+psycopg://{username}:{password}@{host}:{port}/{database}?client_encoding=utf8"
+dotenv.load_dotenv()
 
 
 def prepare_database(engine: Engine) -> bool:

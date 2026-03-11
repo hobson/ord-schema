@@ -30,6 +30,7 @@ Options:
     --n_jobs=<int>          Number of parallel workers [default: 1]
     --debug                 Enable debug logging.
 """
+import dotenv
 import logging
 import os
 import time
@@ -51,6 +52,7 @@ from ord_schema.orm import database
 from ord_schema.proto import dataset_pb2
 
 logger = get_logger(__name__)
+dotenv.load_dotenv()
 
 
 def add_dataset(dsn: str, filename: str, overwrite: bool) -> str:
@@ -150,4 +152,6 @@ def main(**kwargs):
 
 
 if __name__ == "__main__":
-    main(**docopt(__doc__))
+    kwargs = docopt(__doc__)
+    kwargs['--password'] = kwargs.get('--password', '') or dict(os.environ).get('DB_PASSWORD', 'password')
+    main(**kwargs)
